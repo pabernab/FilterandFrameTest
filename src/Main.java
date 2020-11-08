@@ -7,10 +7,41 @@ public class Main {
 
         int[] testArray1 = {3, 4, -2, 1};
         String[] testArray2 = {"abcdefghi", "abcdefghijk", "abcd", "asjdkejdklskd"};
+        System.out.println("Unfiltered arrays:");
+
+        for(int i = 0; i < testArray1.length; i++)
+        {
+            System.out.print(testArray1[i] + " ");
+        }
+
+        System.out.println();
+
+
+        for(int i = 0; i < testArray1.length; i++)
+        {
+            System.out.print(testArray2[i] + " ");
+        }
+
+
+
         ArrayFilter filterOne = new ArrayFilter();
 
-        filter(testArray1,filterOne);
-        filter(testArray2, filterOne);
+        int[] filterArray1 = filter(testArray1,filterOne);
+        String[] filterArray2 = filter(testArray2, filterOne);
+
+        System.out.println("\n" +"Filtered arrays:" );
+        for(int i = 0; i < testArray1.length; i++)
+        {
+            System.out.print(filterArray1[i] + " ");
+        }
+
+        System.out.println();
+
+        for(int i = 0; i < testArray2.length; i++)
+        {
+            System.out.print(filterArray2[i] + " ");
+        }
+
 
 
 
@@ -27,8 +58,7 @@ public class Main {
        {
            if (f.accept(a[i]))
            {
-               filteredArray[filterCount] = a[i];
-               System.out.println(filteredArray[filterCount++]);
+               filteredArray[filterCount++] = a[i];
            }
 
        }
@@ -50,8 +80,7 @@ public class Main {
         {
             if(f.accept(a[i]))
             {
-                filteredArray[filterCount] = a[i];
-                System.out.println(filteredArray[filterCount++]);
+                filteredArray[filterCount++] = a[i];
             }
 
         }
